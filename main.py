@@ -563,12 +563,8 @@ class MentionView(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=300)
 
-    @discord.ui.button(label="Add User", emoji="👤", style=discord.ButtonStyle.primary)
-    async def add_user(self, interaction, button):
-        await interaction.response.send_modal(AddUserModal())
-
-    @discord.ui.button(label="Add Role", emoji="🎭", style=discord.ButtonStyle.primary)
-    async def add_role(self, interaction, button):
-        await interaction.response.send_modal(AddRoleModal())
-
-    @discord.ui.button(label="Remove User", emoji="🗑️", style=discord.ButtonStyle.
+        add_user_button = discord.ui.Button(label="Add User", emoji="👤", style=discord.ButtonStyle.primary)
+        add_role_button = discord.ui.Button(label="Add Role", emoji="🎭", style=discord.ButtonStyle.primary)
+        remove_user_button = discord.ui.Button(label="Remove User", emoji="🗑️", style=discord.ButtonStyle.danger)
+        remove_role_button = discord.ui.Button(label="Remove Role", emoji="🗑️", style=discord.ButtonStyle.danger)
+        back_button = discord.ui.Button
